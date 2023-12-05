@@ -26,9 +26,10 @@ function getValue(response) {
   resultElements.forEach((elementID, index) => {
     const resultElement = document.querySelector(`#${elementID}`);
     const { title, link } = results[index];
-    resultElement.innerHTML = `${title}, ${link}`;
+    resultElement.innerHTML = `${title}, <a href="${link}" target="_blank">${link}</a>`;
   });
 }
+// resultElement.innerHTML = `${title}</a>`;
 
 function submitSearch(event) {
   event.preventDefault();
@@ -37,9 +38,7 @@ function submitSearch(event) {
 }
 
 function searchGoogle(keywords) {
-  let apiKey = "AIzaSyAS24ObvHc0y1rHtXTyu_59-kfA9MiaQCo";
-  let cxKey = "66cd9a7c8106040bb";
-  let apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx${cxKey}=&q=${keywords}`;
+  let apiUrl = `https://www.googleapis.com/customsearch/v1?key=AIzaSyAS24ObvHc0y1rHtXTyu_59-kfA9MiaQCo&cx=66cd9a7c8106040bb&q=${keywords}`;
   axios.get(apiUrl).then(getValue);
 }
 let form = document.querySelector("#searchForm");
