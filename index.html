@@ -25,20 +25,28 @@
   <body>
     <div class="container-md">
       <div class="search-engine">
-        <div class="text-center col-md">
-          <h1>Google vyhledávač</h1>
-        </div>
-        <div class="col-md">
-          <form onSubmit="searchGoogle()" id="searchForm">
-            <input
-              type="search"
-              id="input-keywords"
-              class="keywords"
-              name="keywords"
-              autofocus="on"
-              placeholder="zadejte hledaný výraz"
-            />
-          </form>
+        <div class="header">
+          <h1>
+            <a
+              href="
+https://cse.google.com/cse?cx=66cd9a7c8106040bb"
+              title="google vyhledávač"
+              target="_blank"
+              >Google vyhledávač</a
+            >
+          </h1>
+          <div class="col-md">
+            <form onSubmit="searchGoogle()" id="searchForm">
+              <input
+                type="search"
+                id="input-keywords"
+                class="keywords"
+                name="keywords"
+                autofocus="on"
+                placeholder="zadejte hledaný výraz"
+              />
+            </form>
+          </div>
         </div>
         <div class="col-md m-2 results">
           <p id="result1"></p>

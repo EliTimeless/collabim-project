@@ -1,20 +1,32 @@
 .search-engine {
   border: 5px solid #ffffff;
-  margin-top: 50px;
-
+  margin-top: 20px 20px;
   padding: 10px;
   font-family: "Roboto", sans-serif;
-  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.44);
   border: #ffffff;
   border-radius: 20px;
   padding: 50px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header {
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.44);
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 20px 10px;
+  color: #fff;
+  background-color: #3353dd;
+  text-align: center;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: #3353dd;
   font-weight: 600;
 }
 
@@ -51,6 +63,7 @@ button {
   border-radius: 100px;
   border: 5px solid #ffffff;
   font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 button :hover {
   background-color: #e49d03;
