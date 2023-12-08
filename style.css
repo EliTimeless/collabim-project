@@ -41,6 +41,10 @@ form .keywords {
   padding: 10px 20px;
 }
 
+.results {
+  margin: 10px 20px;
+}
+
 button {
   padding: 10px 20px;
   background-color: #fab624;
@@ -52,6 +56,7 @@ button :hover {
   background-color: #e49d03;
   border: solid 2px #e49d03;
 }
+
 footer {
   font-size: 15px;
   border: 5px solid #ffffff;

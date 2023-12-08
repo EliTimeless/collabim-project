@@ -23,8 +23,9 @@ function getValue(response) {
   resultElements.forEach((elementID, index) => {
     const resultElement = document.querySelector(`#${elementID}`);
     const { title, link } = results[index];
-    resultElement.innerHTML = `${title}, <a href="${link}" target="_blank">${link}</a>`;
+    resultElement.innerHTML = `${title}, <div> <a href="${link}" target="_blank">${link}</a> </div>`;
   });
+  //přidat obrázky
 
   // Přidání tlačítka pro uložení
   const saveButton = document.getElementById("button");
