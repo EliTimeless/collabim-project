@@ -18,49 +18,33 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-
     <title>Google vyhledávač</title>
   </head>
   <body>
     <div class="container-md">
       <div class="search-engine">
         <div class="header">
-          <h1>
-            <a
-              href="
-https://cse.google.com/cse?cx=66cd9a7c8106040bb"
-              title="google vyhledávač"
-              target="_blank"
-              >Google vyhledávač</a
-            >
-          </h1>
-          <div class="col-md">
-            <form onSubmit="searchGoogle()" id="searchForm">
-              <input
-                type="search"
-                id="input-keywords"
-                class="keywords"
-                name="keywords"
-                autofocus="on"
-                placeholder="zadejte hledaný výraz"
-              />
-            </form>
-          </div>
+          <h1>Google vyhledávač</h1>
         </div>
-        <div class="col-md m-2 results">
-          <p id="result1"></p>
-          <p id="result2"></p>
-          <p id="result3"></p>
-          <p id="result4"></p>
-          <p id="result5"></p>
-          <p id="result6"></p>
-          <p id="result7"></p>
-          <p id="result8"></p>
-          <p id="result9"></p>
-          <p id="result10"></p>
+        <div class="col-md">
+          <form id="searchForm">
+            <input
+              type="text"
+              id="input-keywords"
+              class="keywords"
+              name="keywords"
+              autofocus="on"
+              placeholder="zadejte hledaný výraz"
+            />
+            <button type="submit">Hledat</button>
+          </form>
         </div>
-        <button id="button">Uložit vyhledané výrazy</button>
+        <div class="col-md m-2">
+          <!-- Výsledky vyhledávání -->
+          <div id="results" class="results"></div>
+          <!-- Tlačítko pro uložení výsledků -->
+          <button id="saveButton">Uložit výsledky</button>
+        </div>
       </div>
     </div>
     <footer class="text-center">
@@ -68,16 +52,20 @@ https://cse.google.com/cse?cx=66cd9a7c8106040bb"
       <a
         href="https://github.com/EliTimeless/collabim-project.git"
         alt="repozitář na Githubu"
+        title="repozitář na Githubu"
         target="_blank"
-        >open-source</a
       >
+        open-source
+      </a>
       a autorem je
       <a
         href="https://www.linkedin.com/in/eliška-nečasová-front-end-tester"
-        alt="odkaz na osobní stránku LinkedIn"
+        alt="LinkedIn-odkaz"
+        title="odkaz na stránku LinkedIn"
         target="_blank"
-        >Eliška Nečasová</a
       >
+        Eliška Nečasová
+      </a>
     </footer>
     <script src="script.js"></script>
   </body>

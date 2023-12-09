@@ -7,30 +7,18 @@ function getValue(response) {
     });
   }
 
-  const resultElements = [
-    "result1",
-    "result2",
-    "result3",
-    "result4",
-    "result5",
-    "result6",
-    "result7",
-    "result8",
-    "result9",
-    "result10",
-  ];
+  const resultContainer = document.getElementById("results");
+  resultContainer.innerHTML = ""; // Vyprázdnění obsahu před novým vyplněním
 
-  resultElements.forEach((elementID, index) => {
-    const resultElement = document.querySelector(`#${elementID}`);
-    const { title, link } = results[index];
-    resultElement.innerHTML = `${title}, <div> <a href="${link}" target="_blank">${link}</a> </div>`;
+  results.forEach(({ title, link }, index) => {
+    const resultElement = document.createElement("div");
+    resultElement.innerHTML = `${title},<div> <a href="${link}" target="_blank">${link}</a><div>`;
+    resultContainer.appendChild(resultElement);
   });
-  //přidat obrázky
 
   // Přidání tlačítka pro uložení
-  const saveButton = document.getElementById("button");
+  const saveButton = document.getElementById("saveButton");
   saveButton.addEventListener("click", () => saveResultsToFile(results));
-  document.querySelector(".search-engine").appendChild(saveButton);
 }
 
 function submitSearch(event) {
@@ -40,7 +28,7 @@ function submitSearch(event) {
 }
 
 function searchGoogle(keywords) {
-  let apiUrl = `https://www.googleapis.com/customsearch/v1?key=AIzaSyAS24ObvHc0y1rHtXTyu_59-kfA9MiaQCo&cx=66cd9a7c8106040bb&q=${keywords}`;
+  let apiUrl = `https://www.googleapis.com/customsearch/v1?key=AIzaSyAJuUAzCc-i0wHsJ4qtr1MFI0NDeWiTWHE&cx=46b24d08240f446e3&q=${keywords}`;
   axios.get(apiUrl).then(getValue);
 }
 
@@ -61,18 +49,10 @@ function saveResultsToFile(results) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  let searchForm = document.querySelector("#searchForm");
+  searchForm.addEventListener("submit", submitSearch);
+
   let searchInput = document.querySelector("#input-keywords");
-
-  // Nastavení výchozího hledaného slova
-  let defaultKeyword = "collabim";
-  searchInput.value = defaultKeyword;
-
-  // Spuštění vyhledávání po načtení stránky s výchozím slovem
-  searchGoogle(defaultKeyword);
-
-  // Přidání posluchače pro změnu vstupu uživatele
-  searchInput.addEventListener("input", function () {
-    // Spuštění vyhledávání po každé změně vstupu
-    searchGoogle(searchInput.value);
-  });
+  searchInput.value = "collabim";
+  searchGoogle(searchInput.value);
 });
